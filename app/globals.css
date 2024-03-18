@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  body {
+    @apply max-w-4xl mx-auto px-6;
+  }
+}
+
+@layer {
+  body {
+    @apply dark:bg-[#fefef2] bg-gray-50 text-black dark:text-white;
+  }
+}
