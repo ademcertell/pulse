@@ -102,7 +102,7 @@ const TodoList: React.FC<TodoListProps> = () => {
                 </span>
               </div>
               <div>
-                {todo.priority === "High" && ( // Sadece yüksek öncelikli görevler için not ekleme alanını göster
+                {todo.priority === "High" && (
                   <NoteInput
                     value={todo.note}
                     onChange={(note) => handleNoteChange(index, note)}
