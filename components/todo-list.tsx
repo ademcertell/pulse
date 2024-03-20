@@ -29,7 +29,10 @@ const TodoList: React.FC<TodoListProps> = () => {
         setInputValue("");
         setEditIndex(null);
       } else {
-        setTodos([...todos, { text: inputValue, completed: false, priority, note: "" }]);
+        setTodos([
+          ...todos,
+          { text: inputValue, completed: false, priority, note: "" },
+        ]);
         setInputValue("");
       }
     }
@@ -78,7 +81,10 @@ const TodoList: React.FC<TodoListProps> = () => {
       </div>
       <div className="mb-5">
         {inputValue.trim() !== "" && (
-          <PrioritySelector value={priority} onChange={(value) => setPriority(value)} />
+          <PrioritySelector
+            value={priority}
+            onChange={(value) => setPriority(value)}
+          />
         )}
       </div>
       {todos.length === 0 ? (
@@ -97,7 +103,9 @@ const TodoList: React.FC<TodoListProps> = () => {
                   checked={todo.completed}
                   onChange={() => handleToggleTodoCompletion(index)}
                 />
-                <span className={`text-lg ${todo.completed ? "line-through" : ""}`}>
+                <span
+                  className={`text-lg ${todo.completed ? "line-through" : ""}`}
+                >
                   {todo.text} - {todo.priority}
                 </span>
               </div>
@@ -130,4 +138,3 @@ const TodoList: React.FC<TodoListProps> = () => {
 };
 
 export default TodoList;
-
